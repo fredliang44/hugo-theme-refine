@@ -1,0 +1,67 @@
+{{ $pages := where .Pages "Params.hidden" "ne" true }}
+{{ $paginator := .Paginate (where $pages "Type" "posts") }}
+{{ range $paginator.Pages }}
+<div class="post animated fadeInDown">
+  <div class="post_title">
+    <h2><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
+  </div>
+  <div class="post_detail">
+      <div class="meta">
+      <div class="info">
+        <span class="field">
+          <i class="remixicon-calendar-line"></i>
+          <span class="date">{{ .Date.Format "2006.01.02" }}</span>
+        </span>
+        {{ with .Params.tags }}
+        <span class="field">/</span>
+        <span class="field tags">
+          <i class="remixicon-stack-line"></i>
+          {{ range . }}
+          <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+          {{ end }}
+        </span>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+
+  {{ if .Site.Params.enableSummary }}
+  <div class="list">
+    <div class="post_content markdown">
+      <p>{{ .Description }}......</p>
+    </div>
+  </div>
+  {{ end }}
+
+  <div class="read_info">
+    <a class="read_more" href='{{ .RelPermalink }}'>
+      <span>
+        Read More
+      </span>
+      <i class="remixicon-arrow-right-circle-line"></i>
+  
+    </a>
+    <div class="read_time">
+    </div>
+  </div>
+</div>
+{{ end }}
+
+<div class="pagination">
+  {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
+  {{ if $paginator.HasPrev }}
+  <a href="{{$paginator.Prev.URL}}">
+    <div class="pagination_button pre">
+      <i class="remixicon-arrow-left-circle-line"></i>&nbsp{{ i18n "prev_page" }} 
+    </div>
+  </a>
+  {{ end }}
+  {{ if $paginator.HasNext }}
+  <a href="{{$paginator.Next.URL}}">
+    <div class="pagination_button next">
+      {{ i18n "next_page" }}&nbsp<i class="remixicon-arrow-right-circle-line"></i>
+    </div>
+  </a>
+  {{ end }}
+  {{ end }}
+</div>

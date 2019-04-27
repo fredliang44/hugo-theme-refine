@@ -1,0 +1,16 @@
+<footer class="footer">
+  <p class="powered_by">
+    <a href="https://www.yuque.com/fredliang/refine">Designed</a> & <a href="https://github.com/fredliang44/hugo-theme-refine">Coded</a> With ❤️ by <a href="https://www.fredliang.cn">Fred Liang</a>,
+  </p>
+
+  <div class="my_socials">
+    {{ range $key, $val := .Site.Social }}
+    {{ if ne $val "" }}
+    <a href="{{ $val }}" title="{{ $key }}" target="_blank"><i class="remixicon-{{ $key }}-fill"></i></a>
+    {{ end }}
+    {{ end }}
+    <a href="{{ .Site.RSSLink }}" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a>
+  </div>
+</footer>
+
+

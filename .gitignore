@@ -25,6 +25,8 @@ npm-debug.log
 /src/client.config.json
 /styleguide/
 /docs/
+/exampleSite/
 
 /junit.xml
 partials/structure/stylesheet.html
+*.bak
