@@ -345,7 +345,7 @@ ul {
 
   .list { 
     .post_content {
-      color: rgba(0, 0, 0, 0.4);
+      color: rgba(0, 0, 0, 0.5);
 
       p {
         line-height: 2em;
@@ -407,7 +407,7 @@ ul {
 
 .page_tags {
   text-align: center;
-  margin-top: 50px;
+  margin: 50px 0;
 
   ul li {
     margin: 10px 15px;
@@ -449,7 +449,6 @@ ul {
   clear: both;
   text-align: center;
   padding: 40px 0;
-  margin-top:  40px;
   background: #FFFFFF;
   border-top: 1px solid rgba(0, 0, 0, .1);
 
@@ -532,6 +531,7 @@ ul {
     text-decoration: none;
 
     .pagination_button {
+      margin-bottom: 36px;
       padding: 1rem;
       background: #FFFFFF;
       box-shadow: 0 8px 20px 0 rgba(0,0,0,0.06);
@@ -684,7 +684,7 @@ ul {
   b,
   em {
     padding: 1px 2px;
-    background-color: #fcfcf0;
+    background-color: #03b4f821;
     font-weight: normal;
   }
 
