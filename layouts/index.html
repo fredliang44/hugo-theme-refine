@@ -4,7 +4,11 @@
   {{ partial "nav.html" . }}
   {{ partial "header.html" . }}
   <div class="content">
-    {{ partial "post.html" .}}
+    <div class="wrapper">
+      <aside class="left"></aside>
+        {{ partial "post.html" .}}
+      <aside class="right"></aside>
+    </div>
   </div>
 </div>
 {{ partial "footer.html" . }}

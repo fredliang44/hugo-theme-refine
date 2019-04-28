@@ -4,6 +4,7 @@
   {{ partial "nav.html" . }}
   {{ partial "header.html" . }}
   <div class="content">
+    <aside class="left"></aside>
     <div class="list_with_title">
       {{ range .Data.Pages.GroupByDate "2006" }}
       <div class="listing_title">{{ .Key }}</div>
@@ -21,6 +22,7 @@
       </div>
       {{ end }}
     </div>
+    <aside class="right"></aside>
   </div>
   <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
 </div>

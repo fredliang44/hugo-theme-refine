@@ -4,6 +4,7 @@
   {{ partial "nav.html" . }}
   {{ partial "header.html" . }}
   <div class="content">
+    <aside class="left"></aside>
     <div class="post_page">
       <div class="post animated fadeInDown">
         <div class="post_title post_detail_title">
@@ -31,7 +32,13 @@
       {{ partial "comments.html" . }}
       {{ end }}
     </div>
-  </div>
+    <aside class="toc" >
+      <div id="toc_content">
+        <h3>CATALOG</h3>
+        {{ .TableOfContents }}
+      </div>
+    </aside>
+  </div class="right">
   <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
 </div>
 {{ partial "footer.html" . }}
