@@ -270,28 +270,33 @@ ul {
     font-weight: bold;
   }
 
-  .list p {
-    padding-bottom: 0 !important;
+  .list { 
+    .post_content {
+      color: rgba(0, 0, 0, 0.4)
+    }
+    p {
+      padding-bottom: 0 !important;
+    }
   }
 
   .post_content {
     word-break: normal;
     font-size: 16px;
-    color: rgba(0,0,0,0.40);
+    color: #555;
     letter-spacing: 0;
 
     p {
       line-height: 2em;
-      letter-spacing: 0.2px;
+      letter-spacing: 1px;
     }
 
     a {
       text-decoration: none;
       letter-spacing: 1px;
-      color: #e42b2b;
+      color: #0374f8;
 
       &:hover {
-        color: #8e0000;
+        color: #0061d2;
       }
     }
   }
@@ -380,7 +385,7 @@ ul {
   font-size: 14px;
   margin: 0;
   padding: 0;
-
+  
   li {
     list-style-type: none;
     padding: 0;
