@@ -47,8 +47,9 @@
 </div>
 {{ end }}
 
-<div class="pagination">
-  {{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
+
+{{ if or ($paginator.HasPrev) ($paginator.HasNext) }}
+  <div class="pagination">
   {{ if $paginator.HasPrev }}
   <a href="{{$paginator.Prev.URL}}">
     <div class="pagination_button pre">
@@ -63,5 +64,6 @@
     </div>
   </a>
   {{ end }}
-  {{ end }}
-</div>
+  </div>
+{{ end }}
+

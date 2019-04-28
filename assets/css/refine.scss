@@ -3,26 +3,26 @@
 
 @font-face {
   font-family: 'Product Sans';
-  src: url('../../static/fonts/ProductSans-Regular.eot');
+  src: url('../fonts/ProductSans-Regular.woff2');
   src: local('Product Sans'), local('ProductSans-Regular'), local('Product Sans'),
-      url('../../static/fonts/ProductSans-Regular.eot?#iefix') format('embedded-opentype'),
-      url('../../static/fonts/ProductSans-Regular.woff2') format('woff2'),
-      url('../../static/fonts/ProductSans-Regular.woff') format('woff'),
-      url('../../static/fonts/ProductSans-Regular.ttf') format('truetype'),
-      url('../../static/fonts/ProductSans-Regular.svg#ProductSans-Regular') format('svg');
+      url('../fonts/ProductSans-Regular.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/ProductSans-Regular.woff2') format('woff2'),
+      url('../fonts/ProductSans-Regular.woff') format('woff'),
+      url('../fonts/ProductSans-Regular.ttf') format('truetype'),
+      url('../fonts/ProductSans-Regular.svg#ProductSans-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Product Sans';
-  src: url('../../static/fonts/ProductSans-Bold.eot');
+  src: url('../fonts/ProductSans-Bold.woff2');
   src: local('Product Sans Bold'), local('ProductSans-Bold'), local('Product Sans'),
-      url('../../static/fonts/ProductSans-Bold.eot?#iefix') format('embedded-opentype'),
-      url('../../static/fonts/ProductSans-Bold.woff2') format('woff2'),
-      url('../../static/fonts/ProductSans-Bold.woff') format('woff'),
-      url('../../static/fonts/ProductSans-Bold.ttf') format('truetype'),
-      url('../../static/fonts/ProductSans-Bold.svg#ProductSans-Bold') format('svg');
+      url('../fonts/ProductSans-Bold.eot?#iefix') format('embedded-opentype'),
+      url('../fonts/ProductSans-Bold.woff2') format('woff2'),
+      url('../fonts/ProductSans-Bold.woff') format('woff'),
+      url('../fonts/ProductSans-Bold.ttf') format('truetype'),
+      url('../fonts/ProductSans-Bold.svg#ProductSans-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
 }
@@ -154,6 +154,10 @@ ul {
     .site_nav {
       float: left;
       font-family: 'Product San';
+      
+      .nav_active {
+        font-weight: bold;
+      }
 
       ul {
         list-style: none;
