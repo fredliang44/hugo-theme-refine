@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 @font-face {
   font-family: 'Product Sans';
   src: url('../fonts/ProductSans-Regular.woff2');
@@ -27,6 +26,9 @@
   font-style: normal;
 }
 
+::selection {
+  background:rgba(0, 0, 0, .1);
+}
 
 html {
     background-color: #FAFAFA;
@@ -126,9 +128,13 @@ ul {
   aside.toc {
     color: rgba(0,0,0,0.2);
 
+    .reading {
+      background: rgba(0,0,0,0.1);
+    }
 
     #toc_content {
       transition-duration: 1.5s;
+      transition: background-color 0.15s linear;
     }
 
     .fixed {
@@ -163,6 +169,8 @@ ul {
       }
 
       a {
+        border-radius: 6px;
+        padding: 4px;
         color: rgba(0,0,0,0.4);
         font-weight: bold;
       }
@@ -592,6 +600,22 @@ ul {
     color: #000000;
   }
 
+  h1:before, h2:before {
+    position: absolute;
+    transform: translate(-130%);
+    display: block;
+    content: '#';
+    color: rgba(0, 0, 0, .1);
+  }
+  
+  h3:before,  h4:before,  h5:before,  h6:before {
+    position: absolute;
+    transform: translate(-120%);
+    display: block;
+    content: '##';
+    color: rgba(0, 0, 0, .1);
+  }
+
   h1 {
     font-size: 1.35em;
   }
@@ -612,8 +636,9 @@ ul {
   code {
     font-family: 'Roboto Mono', Menlo, Monaco, courier, monospace;
     font-size: 0.9em;
-    background: #f8f8f8 !important;
+    background: rgba(0, 0, 0, .05) !important;
     border: none;
+    margin: 0 3px;
   }
 
   pre {

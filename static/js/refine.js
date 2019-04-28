@@ -9,6 +9,67 @@ window.onresize=function(){
   }
 }
 
+// Debouncing function
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function() {
+      var context = this, args = arguments;
+      var later = function() {
+          timeout = null;
+          if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+  };
+}
+
+// toc
+$(document).ready((function () {
+  let currentAnchor, list, readingVO
+  const distance = 0
+  let tocList = $("#TableOfContents").find("a")
+
+  $(window).scroll(debounce(
+    function () {
+      list = []
+      for (var i = 0; i < tocList.length; i++) {
+        let id = tocList[i].getAttribute("href").substr(1)
+        let dom = document.getElementById(id)
+        let domTitle = document.querySelector('a[href="#'+ id +'"]').getAttribute("href").substr(1)
+    
+        document.querySelector('a[href="#'+ id +'"]').classList.remove('reading')
+
+        list.push({
+          y: dom.getBoundingClientRect().top + 10,
+          index: i,
+          domTitle
+        }, 100)
+      }
+    
+      readingVO = list.filter(item => item.y > distance).sort((a, b) => {
+        return a.y - b.y
+      })[0]
+
+      currentAnchor = $('a[href="#'+ readingVO.domTitle +'"]' )[0]
+
+      for (var i = 0; i < tocList.length; i++) {
+        let id = tocList[i].getAttribute("href").substr(1)
+        let dom = document.getElementById(id)
+        
+        if (!currentAnchor.getAttribute("href").substr(1) == dom.getAttribute("id")) {
+          console.log(currentAnchor.getAttribute("href").substr(1), dom.getAttribute("id"))
+          return currentAnchor.classList.remove('reading')
+        } else {
+          return currentAnchor.classList.add("reading");
+        }
+      }
+      return readingVO
+    }
+  ))
+}))
+
 // toc
 $(document).ready((function (_this) {
   return function () {
@@ -18,6 +79,7 @@ $(document).ready((function (_this) {
       $(window).scroll(function () {
         let st
         st = $(window).scrollTop()
+
         if (st > 70) {
           return toc.addClass('fixed')
         } else {
