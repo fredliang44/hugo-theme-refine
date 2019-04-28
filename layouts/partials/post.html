@@ -39,9 +39,12 @@
         Read More
       </span>
       <i class="remixicon-arrow-right-circle-line"></i>
-  
+
     </a>
     <div class="read_time">
+      <span>
+        {{ div (.Content | countwords) 150}} MIN Read
+      </span>
     </div>
   </div>
 </div>

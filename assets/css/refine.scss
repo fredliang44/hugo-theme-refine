@@ -384,22 +384,34 @@ ul {
 
   .read_info {
     margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      font-family: "Product Sans";
+      font-size: 20px;
+      letter-spacing: 0;
+    }
 
     .read_more {
       display: flex;
       align-items: center;
-      
-      span {
-        font-family: "Product Sans";
-        font-size: 20px;
-        color: #0374F8;
-        letter-spacing: 0;
-        margin-right: 5px;
-      }
+      color: #0374F8;
+      margin-right: 5px;
 
       i {
         color: #0374F8;
         font-size: 20px;
+      }
+    }
+
+    .read_time {
+      color: rgba(0, 0, 0, .3);
+      font-weight: 400;
+      text-align: right;
+
+      span {
+        font-size: 16px;
       }
     }
   }
