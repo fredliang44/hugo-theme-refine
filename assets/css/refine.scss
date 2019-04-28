@@ -361,7 +361,12 @@ ul {
     color: #555;
     letter-spacing: 0;
 
+    ul li {
+      list-style: disc;
+    }
+
     p {
+      margin: 0 0 1.5em;
       line-height: 2em;
       letter-spacing: 1px;
     }
@@ -622,7 +627,7 @@ ul {
   }
 
   blockquote p {
-    white-space: pre-line;
+    white-space: normal;
   }
 
   pre {
