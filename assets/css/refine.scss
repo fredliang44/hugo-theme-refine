@@ -104,9 +104,13 @@ ul {
   margin: 0 auto;
 }
 
-.list_with_title .container {
-  width: 750px;
-  margin: 0 auto;
+.list_with_title {
+
+
+  .container {
+    width: 750px;
+    margin: 0 auto;
+  }
 }
 
 .nav {
@@ -272,10 +276,13 @@ ul {
 
   .list { 
     .post_content {
-      color: rgba(0, 0, 0, 0.4)
-    }
-    p {
-      padding-bottom: 0 !important;
+      color: rgba(0, 0, 0, 0.4);
+
+      p {
+        line-height: 2em;
+        letter-spacing: 0px;
+        padding-bottom: 0 !important;
+      }
     }
   }
 
@@ -332,6 +339,21 @@ ul {
     margin: 10px 15px;
     display: inline-block;
     font-size: 1em;
+
+    a .tag_button {
+      padding: 10px 15px 10px 25px;
+      background: #FFFFFF;
+      box-shadow: 0 8px 20px 0 rgba(0,0,0,0.06);
+      border-radius: 10px;
+      transition-duration: 0.5s;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px 0 rgba(0,0,0,0.12);
+        color: #0374F8;
+        font-weight: 400;
+      }
+    }
   }
 
   .terms_count {
@@ -383,7 +405,7 @@ ul {
 
 .list_with_title {
   font-size: 14px;
-  margin: 0;
+  margin: 20px 0 0 0;
   padding: 0;
   
   li {
@@ -400,7 +422,7 @@ ul {
   }
 
   .listing {
-    margin: 0 0 50px 0;
+    margin: 0 0 30px 0;
     padding: 0;
     line-height: 2.1;
 

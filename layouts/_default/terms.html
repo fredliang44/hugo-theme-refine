@@ -11,7 +11,9 @@
         {{ if ($value.Name) }}
         <li>
           <a href="{{ $data.Plural | absURL }}/{{ $value.Name | urlize }}">
-            {{ $value.Name }} <span class="terms_count">{{ $value.Count }}</span>
+            <div class="tag_button">
+              {{ $value.Name }} <span class="terms_count">{{ $value.Count }}</span>
+            </div>
           </a>
         </li>
         {{ end }}
