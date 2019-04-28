@@ -12,6 +12,6 @@ visit <https://www.yuque.com/fredliang/refine> for blog design file
 
 ## Todo
 
-- [*] Calculate time to read
+- [x] Calculate time to read
 - [ ] Supoort mobile devices
 - [ ] Supoort social share url
