@@ -43,5 +43,12 @@
 </div>
 {{ partial "footer.html" . }}
 {{ partial "js.html" . }}
+
+
+<script src="https://cdn.plyr.io/3.5.4/plyr.polyfilled.js"></script>
+<script>
+    const player = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+</script>
+
 </body>
 </html>

@@ -30,10 +30,14 @@
   background:rgba(0, 0, 0, .1);
 }
 
+html,body{
+  height: 100%;
+}
+
 html {
-    background-color: #FAFAFA;
-    -webkit-font-smoothing: antialiased;
-  }
+  background-color: #FAFAFA;
+  -webkit-font-smoothing: antialiased;
+}
 
 body {
   color: #333333;
@@ -91,7 +95,6 @@ a {
 ul {
   list-style: none;
 }
-
 
 /*basic styles ends*/
 
@@ -229,7 +232,7 @@ ul {
 
     .site_nav {
       float: left;
-      font-family: 'Product San';
+      font-family: 'Product Sans';
       
       .nav_active {
         font-weight: bold;
@@ -286,7 +289,7 @@ ul {
       letter-spacing: 1px;
       color: #1f1f1f;
       font-size: 2rem;
-      line-height: 28px;
+      line-height: 2.4rem;
     }
 
     span {
@@ -363,7 +366,11 @@ ul {
     font-size: 16px;
     color: #555;
     letter-spacing: 0;
-
+    
+    .plyr {
+      margin: 10px 0;
+    }
+    
     ul li {
       list-style: disc;
     }
@@ -828,7 +835,7 @@ a.back_to_top {
     }
 
     .post_content p{
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
 
     .read_info {
