@@ -100,11 +100,6 @@ ul {
   margin: 0;
 }
 
-// .content {
-//   width: 750px;
-//   height: auto;
-//   margin: 0 auto;
-// }
 
 .content {
   
@@ -115,7 +110,7 @@ ul {
   justify-content:center;
 
   .post_page, .wrapper, .list_with_title, .page_tags {
-    width: 750px;
+    width: 56%;
     display: block;
     flex-grow: 0;
   }
@@ -185,7 +180,7 @@ ul {
 
 .list_with_title {
   .container {
-    width: 750px;
+    width: 56%;
     margin: 0 auto;
   }
 }
@@ -218,7 +213,7 @@ ul {
   .nav_container {
     height: 4rem;
     margin: 0 auto;
-    width: 750px;
+    width: 56%;
     flex-grow: 0;
     display: flex;
     align-items: center;
@@ -636,7 +631,7 @@ ul {
   code {
     font-family: 'Roboto Mono', Menlo, Monaco, courier, monospace;
     font-size: 0.9em;
-    background: rgba(0, 0, 0, .05) !important;
+    background: #f2f2f2 !important;
     border: none;
     margin: 0 3px;
   }
@@ -816,33 +811,43 @@ a.back_to_top {
 }
 
 @media screen and (max-width: 900px) {
-  .main {
-    width: 95%;
-    margin-top: 20px;
-  }
-  .nav_container {
-    width: 95%;
+
+  aside {
+    display: none;
   }
 
-  .header,
-  .content {
-    width: 90%;
-  }
-  .post_page {
-    padding-top: 0;
-  }
-  .footer a {
-    margin: 0 6px;
+  .post_page, .wrapper, .list_with_title, .page_tags {
+    width: 90% !important;
   }
   .post {
-    margin-top: 40px;
+    padding: 2rem 1.8rem 2rem 1.8rem;
+    margin-top: 20px;
 
-    .post_title a {
-      font-size: 1.4rem;
+    .post_title a{
+      font-size: 1.5rem;
+    }
+
+    .post_content p{
+      font-size: 0.8rem;
+    }
+
+    .read_info {
+      span {
+      font-size: 1rem;
+      }
+
+      .read_more i {
+        font-size: 1rem;
+      }
+
+      .read_time span {
+        font-size: 0.9rem;
+      }
     }
   }
-  .post_footer {
-    padding-bottom: 30px;
+  
+  .pagination a .pagination_button {
+    margin-bottom: 20px;
   }
 }
 
