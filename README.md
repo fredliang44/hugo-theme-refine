@@ -2,7 +2,7 @@
 
 **Warning: Under Developement**
 
-Demo site: <https://blog.lzb.im>
+Demo site: <https://blog.fredliang.cn>
 
 ## Design
 
