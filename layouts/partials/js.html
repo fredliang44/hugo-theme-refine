@@ -17,6 +17,6 @@
 {{ template "_internal/disqus.html" . }}
 
 
-{{ if .Site.IsServer }}
+{{ if not .Site.IsServer }}
   {{ partial "service-worker.html" . }}
 {{ end }}

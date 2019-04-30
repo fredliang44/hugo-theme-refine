@@ -53,18 +53,21 @@ $(document).ready((function () {
           return a.y - b.y
         })[0]
 
-        currentAnchor = $('a[href="#'+ readingVO.domTitle +'"]' )[0]
+        if (readingVO.domTitle !== undefined) {
+          currentAnchor = $('a[href="#'+ readingVO.domTitle +'"]' )[0]
 
-        for (var i = 0; i < tocList.length; i++) {
-          let id = tocList[i].getAttribute("href").substr(1)
-          let dom = document.getElementById(id)
-          
-          if (!currentAnchor.getAttribute("href").substr(1) == dom.getAttribute("id")) {
-            console.log(currentAnchor.getAttribute("href").substr(1), dom.getAttribute("id"))
-            return currentAnchor.classList.remove('reading')
-          } else {
-            return currentAnchor.classList.add("reading");
+          for (var i = 0; i < tocList.length; i++) {
+            let id = tocList[i].getAttribute("href").substr(1)
+            let dom = document.getElementById(id)
+            
+            if (!currentAnchor.getAttribute("href").substr(1) == dom.getAttribute("id")) {
+              console.log(currentAnchor.getAttribute("href").substr(1), dom.getAttribute("id"))
+              return currentAnchor.classList.remove('reading')
+            } else {
+              return currentAnchor.classList.add("reading");
+            }
           }
+          return readingVO
         }
         return readingVO
       }
