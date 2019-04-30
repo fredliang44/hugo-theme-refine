@@ -8,7 +8,8 @@ description = ""
 homepage = "https://github.com/fredliang/hugo-theme-refine/"
 tags =  ["website", "starter", "responsive"]
 features = []
-min_version = "0.01"
+theme_version = "1.0"
+min_version = "0.48"
 
 [author]
   name = "fredliang"

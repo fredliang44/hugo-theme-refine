@@ -1,4 +1,4 @@
-<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" async src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 MathJax.Hub.Config({
   tex2jax: {
     inlineMath: [['$','$'], ['\\(','\\)']],
@@ -8,7 +8,10 @@ MathJax.Hub.Config({
     skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
     TeX: { equationNumbers: { autoNumber: "AMS" },
          extensions: ["AMSmath.js", "AMSsymbols.js"] }
-  }
+  },
+  "HTML-CSS": { linebreaks: { automatic: true } },
+  SVG: { linebreaks: { automatic: true } }
+  
 });
 
 MathJax.Hub.Queue(function() {
