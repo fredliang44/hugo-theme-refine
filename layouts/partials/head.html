@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="{{ "css/animate.min.css" | absURL }}"/>
   <link rel="stylesheet" href="{{ "css/remixicon.css" | absURL }}"/>
 
-  {{ $style := resources.Get "css/refine.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  {{ $style := resources.Get "css/refine.scss" | resources.ToCSS | resources.Minify }}
   <link rel="stylesheet" href="{{ $style.Permalink }}">
   <link rel="stylesheet" href="{{ "css/highlight.css" | absURL }}"/>
 
@@ -47,5 +47,6 @@
   <link rel="stylesheet" href="{{ "css/" | absURL }}{{ . }}">
   {{ end }}
 
+  <link rel="manifest" href="/manifest.json">
   <link rel="stylesheet" href="https://cdn.plyr.io/3.5.4/plyr.css" />
 </head>

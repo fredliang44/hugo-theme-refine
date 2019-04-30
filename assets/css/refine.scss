@@ -178,6 +178,11 @@ ul {
   .post_page {
     display: block;
     flex-grow: 0;
+
+    .doc_comments {
+      margin-top: 0;
+      padding-top: 0;
+    }
   }
 }
 
@@ -266,7 +271,7 @@ ul {
 
 .post {
   background-color: #ffffff;
-  margin-top: 50px;
+  margin: 50px 0;
   background: #FFFFFF;
   box-shadow: 0 8px 20px 0 rgba(0,0,0,0.06);
   border-radius: 10px;
