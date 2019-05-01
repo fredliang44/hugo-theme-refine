@@ -12,7 +12,7 @@
         <li>
           <a href="{{ $data.Plural | absURL }}/{{ $value.Name | urlize }}/">
             <div class="tag_button">
-              {{ $value.Name }} <span class="terms_count">{{ $value.Count }}</span>
+              {{ $value.Name | humanize | lower }} <span class="terms_count">{{ $value.Count }}</span>
             </div>
           </a>
         </li>

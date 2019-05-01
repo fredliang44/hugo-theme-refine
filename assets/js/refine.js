@@ -53,7 +53,7 @@ $(document).ready((function () {
           return a.y - b.y
         })[0]
 
-        if (readingVO.domTitle !== undefined) {
+        if ( readingVO ) {
           currentAnchor = $('a[href="#'+ readingVO.domTitle +'"]' )[0]
 
           for (var i = 0; i < tocList.length; i++) {
@@ -69,7 +69,8 @@ $(document).ready((function () {
           }
           return readingVO
         }
-        return readingVO
+
+        return 0
       }
     ))
   }

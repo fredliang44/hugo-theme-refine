@@ -41,8 +41,7 @@ html {
 
 body {
   color: #333333;
-  font-family: 'source-han-sans-simplified-c', 'Source Sans Pro',
-    'Helvetica Neue', Arial, sans-serif;
+  font-family: "SF Pro SC","SF Pro Display","SF Pro Icons","PingFang SC","Helvetica Neue","Helvetica","Arial",sans-serif;
   font-size: 16px;
   width: 100%;
   background-color: #FAFAFA;
@@ -442,8 +441,10 @@ ul {
     font-size: 1em;
 
     a .tag_button {
+      text-transform: capitalize;
       padding: 10px 15px 10px 25px;
       background: #FFFFFF;
+      font-weight: bold;
       box-shadow: 0 8px 20px 0 rgba(0,0,0,0.06);
       border-radius: 10px;
       transition-duration: 0.5s;
@@ -452,7 +453,7 @@ ul {
         transform: translateY(-3px);
         box-shadow: 0 10px 20px 0 rgba(0,0,0,0.12);
         color: #0374F8;
-        font-weight: 400;
+
       }
     }
   }
@@ -497,6 +498,7 @@ ul {
   .my_socials {
     a i{
       font-size: 18px;
+      margin: 0 2px;
     }
   }
 }

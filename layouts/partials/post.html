@@ -28,7 +28,7 @@
   {{ if .Site.Params.enableSummary }}
   <div class="list">
     <div class="post_content markdown">
-      <p>{{ .Description }}......</p>
+      <p>{{ plainify .Description }}......</p>
     </div>
   </div>
   {{ end }}
