@@ -8,21 +8,20 @@ workbox.setConfig({
 const CACHE_PREFIX = 'blog';
 
 const PRECACHE_LIST = [
-    "/",
-    "/offline/",
-    "/css/refine.min.css"
+    '/',
+    '/offline/',
+    '{{ .Scratch.Get "cssHref"}}',
+    '{{ .Scratch.Get "jsHref"}}'
 ];
 
 const HOSTNAME_WHITELIST = [
   self.location.hostname,
-  "storage.fredliang.cn",
+  'storage.fredliang.cn',
 ];
 
 workbox.setConfig({
   modulePathPrefix: 'https://g.alicdn.com/kg/workbox/3.6.3/'
 });
-
-const hash = 'awednasdssasasdsddabdasdads';
 
 workbox.core.setCacheNameDetails({prefix: CACHE_PREFIX});
 
@@ -79,3 +78,5 @@ self.addEventListener('activate', function(event){
 });
 
 workbox.precaching.precacheAndRoute(PRECACHE_LIST);
+
+// latest built at {{ now }}

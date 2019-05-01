@@ -38,8 +38,11 @@
   <link rel="stylesheet" href="{{ "css/animate.min.css" | absURL }}"/>
   <link rel="stylesheet" href="{{ "css/remixicon.css" | absURL }}"/>
 
-  {{ $style := resources.Get "css/refine.scss" | resources.ToCSS | resources.Minify }}
-  <link rel="stylesheet" href="{{ $style.Permalink }}">
+  <!-- refine.css then set link in sw.js-->
+  {{ $Style := resources.Get "css/refine.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
+  <link rel="stylesheet" href="{{ $Style.Permalink }}">
+  {{ .Scratch.Set "cssHref" $Style.Permalink }}
+
   <link rel="stylesheet" href="{{ "css/highlight.css" | absURL }}"/>
 
   <!-- custom css -->

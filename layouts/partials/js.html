@@ -1,5 +1,12 @@
 <script src="{{ "js/jquery-3.3.1.min.js" | absURL }}"></script>
-<script src="{{ "js/refine.js" | absURL }}"></script>
+
+{{ $refine := resources.Get "js/refine.js" | resources.Minify | resources.Fingerprint }}
+<script type="text/javascript" src="{{ $refine.Permalink }}"></script>
+{{ .Scratch.Set "jsHref" $refine.Permalink }}
+
+{{ $sw := resources.Get "sw.js" | resources.ExecuteAsTemplate "sw.js" . }}
+{{ $test := $sw.Permalink}}
+
 <script src="{{ "js/highlight.pack.js" | absURL }}"></script>
 <link  href="{{ "css/prism.css" | absURL }}" rel="stylesheet">
 <script src="{{ "js/prism.js" | absURL }}"></script>
