@@ -6,7 +6,7 @@
   <div class="my_socials">
     {{ range $key, $val := .Site.Social }}
     {{ if ne $val "" }}
-    <a href="{{ $val }}" title="{{ $key }}" target="_blank"><i class="remixicon-{{ $key }}-fill"></i></a>
+    <a rel="noreferrer noopener" href="{{ $val }}" title="{{ $key }}" target="_blank"><i class="remixicon-{{ $key }}-fill"></i></a>
     {{ end }}
     {{ end }}
     <!-- RSS Support

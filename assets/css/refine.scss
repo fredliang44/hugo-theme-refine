@@ -2,6 +2,7 @@
 
 @font-face {
   font-family: 'Product Sans';
+  font-display: auto;
   src: url('../fonts/ProductSans-Regular.woff2');
   src: local('Product Sans'), local('ProductSans-Regular'), local('Product Sans'),
       url('../fonts/ProductSans-Regular.eot?#iefix') format('embedded-opentype'),
@@ -15,6 +16,7 @@
 
 @font-face {
   font-family: 'Product Sans';
+  font-display: auto;
   src: url('../fonts/ProductSans-Bold.woff2');
   src: local('Product Sans Bold'), local('ProductSans-Bold'), local('Product Sans'),
       url('../fonts/ProductSans-Bold.eot?#iefix') format('embedded-opentype'),
@@ -331,7 +333,8 @@ ul {
         display: flex;
         align-items: center;
         margin-right: 10px;
-        
+        white-space: nowrap;
+
         i {
           margin-right: 10px;
         }
@@ -550,7 +553,6 @@ ul {
 }
 
 .pagination {
-  margin-top: 20px;
   padding-bottom: 60px;
   color: #666666;
   font-size: 14px;
@@ -912,6 +914,7 @@ a.back_to_top {
   .post {
     padding: 2rem 1.8rem 2rem 1.8rem;
     margin-top: 20px;
+    overflow: hidden;
 
     .post_title a{
       font-size: 1.5rem;
@@ -938,6 +941,10 @@ a.back_to_top {
   
   .pagination a .pagination_button {
     margin-bottom: 20px;
+  }
+
+  .footer .my_socials a i {
+    font-size: 24px;
   }
 }
 

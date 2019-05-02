@@ -1,7 +1,7 @@
 <script src="{{ "js/jquery-3.3.1.min.js" | absURL }}"></script>
 
-{{ $refine := resources.Get "js/refine.js" | resources.Minify | resources.Fingerprint }}
-<script type="text/javascript" src="{{ $refine.Permalink }}"></script>
+{{ $refine := resources.Get "js/refine.js" | resources.Minify | resources.Fingerprint "sha512" }}
+<script type="text/javascript" src="{{ $refine.Permalink }}" integrity="{{ $refine.Data.Integrity }}"></script>
 {{ .Scratch.Set "jsHref" $refine.Permalink }}
 
 {{ $sw := resources.Get "sw.js" | resources.ExecuteAsTemplate "sw.js" . }}

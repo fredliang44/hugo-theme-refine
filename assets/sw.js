@@ -10,7 +10,6 @@ const CACHE_PREFIX = 'blog';
 const PRECACHE_LIST = [
     '/',
     '/offline/',
-    '{{ .Scratch.Get "cssHref"}}',
     '{{ .Scratch.Get "jsHref"}}'
 ];
 
@@ -53,7 +52,6 @@ const handler = (args) => networkFirstHandler.handle(args).then((response) => (!
 // active offline page
 workbox.routing.registerRoute(matcher, handler);
 
-// html的缓存策略
 workbox.routing.registerRoute(
   new RegExp('.*\.(?:html|json)'),
   workbox.strategies.networkFirst()
@@ -62,6 +60,22 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
   new RegExp('.*\.(?:js|css)'),
   workbox.strategies.cacheFirst()
+);
+
+workbox.routing.registerRoute(
+  /\.(?:png|jpg|jpeg|svg|gif)$/,
+  new workbox.strategies.CacheFirst({
+    cacheName: 'my-image-cache',
+  })
+);
+
+workbox.routing.registerRoute(
+  new RegExp('https://storage\\.fredliang\\.cn/'),
+  new workbox.strategies.NetworkFirst({
+    fetchOptions: {
+      credentials: 'include',
+    },
+  })
 );
 
 workbox.routing.registerRoute(
@@ -79,4 +93,4 @@ self.addEventListener('activate', function(event){
 
 workbox.precaching.precacheAndRoute(PRECACHE_LIST);
 
-// latest built at {{ now }}
+/**   @preserve  latest built at {{ now }} **/
