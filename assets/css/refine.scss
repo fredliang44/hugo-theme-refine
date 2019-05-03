@@ -271,12 +271,13 @@ ul {
 }
 
 .post {
-  background-color: #ffffff;
+  background-color: #fff;
   margin: 50px 0;
-  background: #FFFFFF;
-  box-shadow: 0 8px 20px 0 rgba(0,0,0,0.06);
+  background: #fff;
+  border: 3rem solid white;
+  box-shadow: 0 8px 20px 0 rgba(0,0,0,.06);
   border-radius: 10px;
-  padding: 3rem 3rem 2.5rem 3rem;
+  padding: 0;
 
   .post_title {
     padding-bottom: 16px;
@@ -338,6 +339,11 @@ ul {
         i {
           margin-right: 10px;
         }
+
+        a {
+          padding: 2px 6px 2px 6px;
+        }
+
       }
 
       .tags a {
@@ -432,6 +438,19 @@ ul {
       }
     }
   }
+
+  .post_footer {
+    .field a {
+      font-size: 14px;
+    }
+  }
+}
+
+.field a {
+  padding: 3px 8px 5px 8px;
+  border-radius: 5px;
+  margin: 0 3px;
+  border: 1.3px solid rgba(0,0,0,.2);
 }
 
 .page_tags {
@@ -912,7 +931,7 @@ a.back_to_top {
     width: 90% !important;
   }
   .post {
-    padding: 2rem 1.8rem 2rem 1.8rem;
+    border: 2rem solid #fff;
     margin-top: 20px;
     overflow: hidden;
 
@@ -923,6 +942,7 @@ a.back_to_top {
     .post_content p{
       font-size: 1rem;
     }
+
 
     .read_info {
       span {

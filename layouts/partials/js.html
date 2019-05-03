@@ -1,4 +1,4 @@
-<script src="{{ "js/jquery-3.3.1.min.js" | absURL }}"></script>
+<script src="{{ "js/jquery-3.4.1.slim.min.js" | absURL }}"></script>
 
 {{ $refine := resources.Get "js/refine.js" | resources.Minify | resources.Fingerprint "sha512" }}
 <script type="text/javascript" src="{{ $refine.Permalink }}" integrity="{{ $refine.Data.Integrity }}"></script>
@@ -7,9 +7,17 @@
 {{ $sw := resources.Get "sw.js" | resources.ExecuteAsTemplate "sw.js" . }}
 {{ $test := $sw.Permalink}}
 
-<script src="{{ "js/highlight.pack.js" | absURL }}"></script>
+<script src="{{ "js/highlight.pack.js" | absURL }}" async></script>
 <link  href="{{ "css/prism.css" | absURL }}" rel="stylesheet">
-<script src="{{ "js/prism.js" | absURL }}"></script>
+<script src="{{ "js/prism.js" | absURL }}" async></script>
+<script src="{{ "js/remember-scroll.min.js" | absURL }}"></script>
+<script>
+// remember previous reading location
+new RememberScroll({
+  pageKey: window.location.pathname,
+  maxLength: 100
+})
+</script>
 
 {{ if .Site.Params.enableMathJax }}
   {{ partial "mathjax.html" . }}
