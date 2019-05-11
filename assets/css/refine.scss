@@ -263,8 +263,27 @@ ul {
       a {
         display: block;
         white-space: nowrap;
-        padding: 10px 40px 10px 0;
+        margin: 10px 40px 10px 0;
         font-size: 1.1rem;
+        position: relative;
+      }
+
+      a::before {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: rgba(0, 0, 0, .6);
+        transform-origin: bottom right;
+        transform: scaleX(0);
+        transition: transform 0.5s ease;
+      }
+
+      a:hover::before  {
+        transform-origin: bottom left;
+        transform: scaleX(1);
       }
     }
   }
@@ -275,6 +294,8 @@ ul {
   margin: 50px 0;
   background: #fff;
   border: 3rem solid white;
+  border-bottom: 2.5rem solid white;
+  border-top: 3rem solid white;
   box-shadow: 0 8px 20px 0 rgba(0,0,0,.06);
   border-radius: 10px;
   padding: 0;
@@ -409,6 +430,7 @@ ul {
     span {
       font-family: "Product Sans";
       font-size: 20px;
+      margin-right: 4px;
       letter-spacing: 0;
     }
 
@@ -923,6 +945,14 @@ a.back_to_top {
 }
 
 @media screen and (max-width: 900px) {
+  .markdown blockquote:before {
+    content: '';
+  }
+  .markdown blockquote {
+    padding: 0 0 0 16px;
+    border-left: rgba(175, 175, 175, 0.22) solid 5px;
+    color: rgba(0,0,0,.4)
+  }
 
   aside {
     display: none;
