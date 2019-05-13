@@ -1,0 +1,29 @@
+<!-- graph html -->
+<div id="{{ index .Params 0 }}"></div>
+<script >
+if (callBackStack === undefined) {
+    var callBackStack = []
+}
+var loadJS = function(url, location){
+    var implementationCode = function(){
+        {{ .Inner | safeJS }}
+    }
+    var scriptTag 
+    if ( document.querySelectorAll('[src="'+url+'"]').length === 0 ) {
+        scriptTag = document.createElement('script');
+        scriptTag.src = url;
+        location.appendChild(scriptTag);
+        callBackStack.push(implementationCode)
+        scriptTag.onload = all;
+    } else {
+        callBackStack.push(implementationCode)
+        scriptTag = document.querySelectorAll('[src="'+url+'"]')[0].onload = all;
+    }
+};
+
+var all = function(){
+  callBackStack.forEach(function(fn) { fn() });
+};
+
+loadJS('https://gw.alipayobjects.com/os/lib/antv/g2/3.4.10/dist/g2.min.js', document.body);
+</script>
