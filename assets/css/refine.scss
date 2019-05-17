@@ -134,6 +134,18 @@ ul {
     #toc_content {
       transition-duration: 1.5s;
       transition: background-color 0.15s linear;
+      overflow: hidden;
+
+      nav {
+        position: relative;
+        max-height: 75vh;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar { 
+          width: 0 !important;
+        }
+      }
     }
 
     .fixed {
@@ -976,6 +988,8 @@ a.back_to_top {
   }
   .post {
     border: 2rem solid #fff;
+    border-bottom: 0;
+    padding-bottom: 2rem;
     margin-top: 20px;
     overflow: hidden;
 

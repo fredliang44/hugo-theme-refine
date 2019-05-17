@@ -1,0 +1,9 @@
+
+<object data="{{ index .Params 0 }}" type="application/pdf"  width="100%" height="450px">
+	<embed src="{{ index .Params 0 }}#toolbar=0" type="application/pdf">
+		<em>
+			This browser does not support PDFs. Please download the PDF to view it: <a href="{{ index .Params 0 }}">Download PDF</a>.
+		</em>
+	</embed>
+</object>
+<p> </p>

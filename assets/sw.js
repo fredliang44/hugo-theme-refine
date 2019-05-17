@@ -71,7 +71,7 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
   new RegExp('https://storage\\.fredliang\\.cn/'),
-  new workbox.strategies.NetworkFirst({
+  new workbox.strategies.CacheFirst({
     fetchOptions: {
       credentials: 'include',
     },
