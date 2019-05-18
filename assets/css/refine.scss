@@ -492,8 +492,7 @@ button {
 .field a {
   padding: 4px 8px 4px 8px;
   border-radius: 5px;
-  margin: 0 3px;
-  // border: 1.3px solid rgba(0,0,0,.2);
+  margin: 0;
   
 }
 
@@ -586,8 +585,9 @@ button {
   }
 
   .listing_title {
-    font-size: 1.4rem;
-    color: #1f1f1f;
+    font-size: 2.6rem;
+    color: #6d6d6d;
+    font-family: "Product Sans";
     font-weight: bold;
     padding-top: 10px;
     line-height: 2.2em;
@@ -595,25 +595,50 @@ button {
 
   .listing {
     margin: 0 0 30px 0;
-    padding: 0;
     line-height: 2.1;
 
-    .listing_post {
-      padding-bottom: 5px;
+    .listing_item {
+      background-color: white;
+      margin: 10px 0;
+      border-radius: 10px;
+      box-shadow: 0 0px 10px 0 rgba(0,0,0,.06);
+      padding: 0.6rem 1rem;
+      transition:color 2s, box-shadow 0.3s, transform  0.5s;
+      z-index: 0;
 
-      a {
-        display: inline-block;
-        width: 85%;
+      &:last-child {
+        border-bottom: 0px;
+      }
+    
+      &:hover {
+        box-shadow: 0 0 20px 0 rgba(0,0,0,.15);
+        z-index: 100;
+        transform: translateY(-1.5px);
+
+        .listing_post a, .listing_post:hover a{
+          color: #0061d2;
+        }
       }
 
-      .post_time {
-        float: right;
-        color: #c5c5c5;
-        font-size: 14px;
-      }
+      .listing_post {
+        color: #424242;
+        a {
+          transition:color 0.1s;
+          display: inline-block;
+          width: 85%;
+          color: #424242;
+          font-weight: bold;
+        }
 
-      a:hover {
-        color: #1f1f1f;
+        .post_time {
+          float: right;
+          color: #757575;
+          font-size: 14px;
+        }
+
+        a:hover {
+          color: #1f1f1f;
+        }
       }
     }
   }
