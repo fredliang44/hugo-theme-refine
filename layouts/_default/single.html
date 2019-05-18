@@ -45,6 +45,15 @@
 {{ partial "js.html" . }}
 
 <script src="{{ "js/plyr.polyfilled.js" | absURL }}"></script>
+<script src="{{ "js/remember-scroll.min.js" | absURL }}"></script>
+<script>
+// remember previous reading location
+new RememberScroll({
+  pageKey: window.location.pathname,
+  maxLength: 100
+})
+</script>
+
 <script>
     const player = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
 </script>

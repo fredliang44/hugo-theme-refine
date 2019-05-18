@@ -10,14 +10,6 @@
 <script src="{{ "js/highlight.pack.js" | absURL }}" async></script>
 <link  href="{{ "css/prism.css" | absURL }}" rel="stylesheet">
 <script src="{{ "js/prism.js" | absURL }}" async></script>
-<script src="{{ "js/remember-scroll.min.js" | absURL }}"></script>
-<script>
-// remember previous reading location
-new RememberScroll({
-  pageKey: window.location.pathname,
-  maxLength: 100
-})
-</script>
 
 {{ if .Site.Params.enableMathJax }}
   {{ partial "mathjax.html" . }}
