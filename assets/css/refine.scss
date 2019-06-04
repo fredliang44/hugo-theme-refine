@@ -3,13 +3,13 @@
 @font-face {
   font-family: 'Product Sans';
   font-display: auto;
-  src: url('../fonts/ProductSans-Regular.woff2');
+  src: url('/fonts/ProductSans-Regular.woff2');
   src: local('Product Sans'), local('ProductSans-Regular'), local('Product Sans'),
-      url('../fonts/ProductSans-Regular.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/ProductSans-Regular.woff2') format('woff2'),
-      url('../fonts/ProductSans-Regular.woff') format('woff'),
-      url('../fonts/ProductSans-Regular.ttf') format('truetype'),
-      url('../fonts/ProductSans-Regular.svg#ProductSans-Regular') format('svg');
+      url('/fonts/ProductSans-Regular.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/ProductSans-Regular.woff2') format('woff2'),
+      url('/fonts/ProductSans-Regular.woff') format('woff'),
+      url('/fonts/ProductSans-Regular.ttf') format('truetype'),
+      url('/fonts/ProductSans-Regular.svg#ProductSans-Regular') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -17,13 +17,13 @@
 @font-face {
   font-family: 'Product Sans';
   font-display: auto;
-  src: url('../fonts/ProductSans-Bold.woff2');
+  src: url('/fonts/ProductSans-Bold.woff2');
   src: local('Product Sans Bold'), local('ProductSans-Bold'), local('Product Sans'),
-      url('../fonts/ProductSans-Bold.eot?#iefix') format('embedded-opentype'),
-      url('../fonts/ProductSans-Bold.woff2') format('woff2'),
-      url('../fonts/ProductSans-Bold.woff') format('woff'),
-      url('../fonts/ProductSans-Bold.ttf') format('truetype'),
-      url('../fonts/ProductSans-Bold.svg#ProductSans-Bold') format('svg');
+      url('/fonts/ProductSans-Bold.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/ProductSans-Bold.woff2') format('woff2'),
+      url('/fonts/ProductSans-Bold.woff') format('woff'),
+      url('/fonts/ProductSans-Bold.ttf') format('truetype'),
+      url('/fonts/ProductSans-Bold.svg#ProductSans-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
 }
@@ -125,6 +125,7 @@ button {
     width: 56%;
     display: block;
     flex-grow: 0;
+    order: 0;
   }
 
   aside {
@@ -132,8 +133,17 @@ button {
     width: 0;
   }
 
+  aside.right {
+    order: 1;
+  }
+
+  aside.left {
+    order: -1;
+  }
+
   aside.toc {
     color: rgba(0,0,0,0.2);
+
 
     .reading {
       background: rgba(0,0,0,0.1);
@@ -149,10 +159,6 @@ button {
         max-height: 75vh;
         overflow-y: scroll;
         overflow-x: hidden;
-
-        &::-webkit-scrollbar { 
-          width: 0 !important;
-        }
       }
     }
 
@@ -199,6 +205,7 @@ button {
   .post_page {
     display: block;
     flex-grow: 0;
+
 
     .doc_comments {
       margin-top: 0;
