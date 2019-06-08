@@ -146,9 +146,11 @@ button {
 
 
     .reading {
-      background: rgba(0,0,0,0.1);
+      background: rgba(0,0,0,.1);
+      color: #232323;
     }
 
+ 
     #toc_content {
       transition-duration: 1.5s;
       transition: background-color 0.15s linear;
@@ -198,6 +200,10 @@ button {
         padding: 4px;
         color: rgba(0,0,0,0.4);
         font-weight: bold;
+
+        &:hover {
+          background-color: rgba(0,0,0,.05)
+        }
       }
     }
   }
@@ -224,7 +230,7 @@ button {
 .nav {
   display: flex;
   background: #FFFFFF;
-  box-shadow: 0 2px 20px 0 rgba(0,0,0,0.06);
+  box-shadow: 0 2px 20px 0 rgba(0,0,0,.096);
 
   .nav_left {
     width: auto;
@@ -323,7 +329,7 @@ button {
   border: 3rem solid white;
   border-bottom: 2.5rem solid white;
   border-top: 3rem solid white;
-  box-shadow: 0 8px 20px 0 rgba(0,0,0,.06);
+  box-shadow: 0 8px 20px 0 rgba(0,0,0,.096);
   border-radius: 10px;
   padding: 0;
 
@@ -521,7 +527,7 @@ button {
       padding: 10px 15px 10px 25px;
       background: #FFFFFF;
       font-weight: bold;
-      box-shadow: 0 8px 20px 0 rgba(0,0,0,0.06);
+      box-shadow: 0 8px 20px 0 rgba(0,0,0,.096);
       border-radius: 10px;
       transition-duration: 0.5s;
 
@@ -608,7 +614,7 @@ button {
       background-color: white;
       margin: 10px 0;
       border-radius: 10px;
-      box-shadow: 0 0px 10px 0 rgba(0,0,0,.06);
+      box-shadow: 0 0px 10px 0 rgba(0,0,0,.096);
       padding: 0.6rem 1rem;
       transition:color 2s, box-shadow 0.3s, transform  0.5s;
       z-index: 0;
@@ -664,7 +670,7 @@ button {
       margin-bottom: 36px;
       padding: 1rem;
       background: #FFFFFF;
-      box-shadow: 0 8px 20px 0 rgba(0,0,0,0.06);
+      box-shadow: 0 8px 20px 0 rgba(0,0,0,.096);
       border-radius: 10px;
       transition: 0.3s ease-in-out;
       display: flex;
