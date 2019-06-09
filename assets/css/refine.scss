@@ -3,8 +3,34 @@
 @font-face {
   font-family: 'Product Sans';
   font-display: auto;
+  src: url('/fonts/ProductSans-Light.eot');
+  src: local('Product Sans'), local('ProductSans-Light'),
+      url('/fonts/ProductSans-Light.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/ProductSans-Light.woff2') format('woff2'),
+      url('/fonts/ProductSans-Light.woff') format('woff'),
+      url('/fonts/ProductSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  font-display: auto;
+  src: url('/fonts/ProductSans-Thin.woff2');
+  src: local('Product Sans'), local('ProductSans-Thin'),
+      url('/fonts/ProductSans-Thin.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/ProductSans-Thin.woff2') format('woff2'),
+      url('/fonts/ProductSans-Thin.woff') format('woff'),
+      url('/fonts/ProductSans-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  font-display: auto;
   src: url('/fonts/ProductSans-Regular.woff2');
-  src: local('Product Sans'), local('ProductSans-Regular'), local('Product Sans'),
+  src: local('Product Sans'), local('ProductSans-Regular'),
       url('/fonts/ProductSans-Regular.eot?#iefix') format('embedded-opentype'),
       url('/fonts/ProductSans-Regular.woff2') format('woff2'),
       url('/fonts/ProductSans-Regular.woff') format('woff'),
@@ -211,11 +237,14 @@ button {
   .post_page {
     display: block;
     flex-grow: 0;
-
-
     .doc_comments {
-      margin-top: 0;
-      padding-top: 0;
+      margin: 0;
+      padding-bottom: 0;
+      .comments_block_title {
+        font-family: "Noto Serif", "Noto Serif CJK TC", "Source Han Serif TC", "Songti TC", serif;
+        font-size: 24px;
+        font-weight: 700;
+      }
     }
   }
 }
@@ -496,6 +525,9 @@ button {
   }
 
   .post_footer {
+    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+    padding-bottom: 40px;
+
     .field a {
       font-size: 14px;
     }
@@ -561,26 +593,50 @@ button {
   padding: 40px 0;
   background: #FFFFFF;
   border-top: 1px solid rgba(0, 0, 0, .1);
-
+  
+  
   p {
     font-family: "Product Sans";
     font-size: 18px;
-    color: rgba(0,0,0,0.60);
+    color: rgba(0,0,0,0.5);
     letter-spacing: 0;
     text-align: center;
     
+    
     a {
+      transition-duration: 0.2s;
       font-family: "Product Sans";
       font-weight: bold;
-      text-decoration: underline;
-      
+      color: rgba(0,0,0,0.5);
+
+      &:hover{
+        color: rgba(0,0,0,1);
+      }
     }
   }
 
   .my_socials {
     a i{
+      transition-duration: 0.5s;
+      color: rgba(0,0,0,0.5);
       font-size: 18px;
       margin: 0 2px;
+
+      &:hover{
+        color: rgba(0,0,0,1);
+      }
+    }
+  }
+
+  .beian {
+    font-size: 13px;
+    font-weight: bold;
+    font-family: "Noto Serif", "Noto Serif CJK TC", "Source Han Serif TC", "Songti TC", serif;
+    letter-spacing: 1px;
+
+    a{
+      font-family: "Noto Serif", "Noto Serif CJK TC", "Source Han Serif TC", "Songti TC", serif;
+      color: rgba(0,0,0,0.5);
     }
   }
 }

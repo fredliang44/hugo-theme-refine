@@ -32,11 +32,13 @@
           </div>
           {{ end }}
         </div>
+
+        <!-- Valine 评论系统 -->
+        {{ if .Site.Params.valine.enable }}
+          {{ partial "comments.html" . }}
+        {{ end }}
       </div>
-      <!-- Valine 评论系统 -->
-      {{ if .Site.Params.valine.enable }}
-        {{ partial "comments.html" . }}
-      {{ end }}
+      
     </div>
 
   <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
