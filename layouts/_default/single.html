@@ -23,9 +23,14 @@
           <div class="meta">
             <div class="info">
               <span class="field tags">
-                <i class="remixicon-stack-line"></i>
                 {{ range . }}
-                <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+                  <div class="tag">
+                    {{ with resources.Get "images/hash.svg"}}
+                      {{ .Content | safeHTML }}
+                    {{ end }}
+
+                    <a href="{{ "tags" | absURL }}/{{ . | urlize }}/">{{ . }}</a>
+                  </div>
                 {{ end }}
               </span>
             </div>

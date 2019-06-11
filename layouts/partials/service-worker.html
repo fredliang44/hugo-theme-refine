@@ -11,8 +11,7 @@
             if (newWorker.state === 'installed') {
               if (navigator.serviceWorker.controller) {
                 console.log('Service Worker Updated');
-                showNotify( "网站有更新，点击<a href='"+window.location.href+"'>更新</a>最新版");
-                
+                showNotify( "网站有更新，点击<a href='"+window.location.href+"'>刷新当前页面</a>获取最新版");
                 return 0
               }
             }

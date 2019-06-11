@@ -138,7 +138,6 @@ button {
   margin: 0;
 }
 
-
 .content {
   
   height: auto;
@@ -424,15 +423,6 @@ button {
         }
 
       }
-
-      .tags a {
-        text-decoration: none;
-        padding-right: 6px;
-
-        &:hover {
-          color: #1f1f1f;
-        }
-      }
     }
   }
 
@@ -470,7 +460,7 @@ button {
     p {
       margin: 0 0 1.5em;
       line-height: 2em;
-      letter-spacing: 1px;
+      letter-spacing: 0.7px;
     }
 
     a {
@@ -534,16 +524,41 @@ button {
   }
 }
 
-.field a {
-  padding: 4px 8px 4px 8px;
+.tag{
+  display: inline;
+  padding: 2px 4px 4px 4px;
   border-radius: 5px;
   margin: 0;
-  
+  transition-duration: 0.4s;
+
+  &:hover {
+    box-shadow: 0px 2px 15px rgba(0,0,0,0.14);
+  }
 }
 
-.field a:hover {
-  box-shadow: 0px 2px 15px rgba(0,0,0,0.14);
+.field {
+  font-family: "Product Sans";
+  a {
+    text-decoration: none;
+    &:hover {
+      color: #1f1f1f;
+    }
+  }
+  
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  a, svg {
+    vertical-align: middle;
+  }
+
+  a {
+    margin-left: 0px;
+  }
 }
+
 
 .page_tags {
   text-align: center;
@@ -911,6 +926,7 @@ button {
     word-break: keep-all;
     border-collapse: collapse;
     border-spacing: 0;
+    margin: 0 0 1.5em;
   }
   table tr {
     background-color: #fff;
@@ -930,7 +946,7 @@ button {
   }
 
   img {
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
   }
 }
@@ -970,7 +986,8 @@ a.back_to_top {
   position: fixed;
   bottom: -100px;
   left: 20px;
-  width: 300px;
+  min-width: 300px;
+  max-width: 600px;
   min-height: 30px;
 
   display: flex;
@@ -1089,9 +1106,10 @@ a.back_to_top {
     width: 90% !important;
   }
   .post {
-    border: 2rem solid #fff;
-    border-bottom: 0;
-    padding-bottom: 2rem;
+    border: 0;
+    border-right: 2rem solid #fff;
+    padding: 2rem 0 2rem 2rem;
+
     margin-top: 20px;
     overflow: hidden;
 
