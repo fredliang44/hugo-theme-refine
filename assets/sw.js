@@ -59,7 +59,9 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
   new RegExp('.*\.(?:js|css)'),
-  workbox.strategies.cacheFirst()
+  workbox.strategies.staleWhileRevalidate({
+    cacheName: 'workbox:js',
+  })
 );
 
 workbox.routing.registerRoute(
@@ -71,10 +73,8 @@ workbox.routing.registerRoute(
 
 workbox.routing.registerRoute(
   new RegExp('https://storage\\.fredliang\\.cn/'),
-  new workbox.strategies.CacheFirst({
-    fetchOptions: {
-      credentials: 'include',
-    },
+  new workbox.strategies.staleWhileRevalidate({
+    cacheName: 'workbox:storage',
   })
 );
 
