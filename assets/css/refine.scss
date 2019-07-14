@@ -1075,20 +1075,6 @@ a.back_to_top {
   }
 }
 
-@media screen and (min-width: 1600px) {
-  .main {
-    width: 1000px;
-  }
-  .nav_container {
-    width: 840px;
-  }
-
-  .header,
-  .content {
-    width: 820px;
-  }
-}
-
 @media screen and (max-width: 900px) {
   .markdown blockquote:before {
     content: '';
