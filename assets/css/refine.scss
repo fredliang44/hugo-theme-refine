@@ -234,6 +234,10 @@ button {
   }
 
   .post_page {
+    .post {
+      box-shadow: 0 8px 20px 0 rgba(0,0,0,.07);
+    }
+
     display: block;
     flex-grow: 0;
     .doc_comments {
@@ -357,10 +361,21 @@ button {
   border: 3rem solid white;
   border-bottom: 2.5rem solid white;
   border-top: 3rem solid white;
-  box-shadow: 0 8px 20px 0 rgba(0,0,0,.096);
+  box-shadow: 0 8px 20px 0 rgba(0,0,0,.07);
+  transition: 0.3s;
   border-radius: 10px;
   padding: 0;
 
+  &:hover {
+    box-shadow: 0 12px 36px 0 rgba(0,0,0,.12);
+  }
+  .post_url {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
   .post_title {
     padding-bottom: 16px;
 
@@ -608,7 +623,6 @@ button {
   padding: 40px 0;
   background: #FFFFFF;
   border-top: 1px solid rgba(0, 0, 0, .1);
-  
   
   p {
     font-family: "Product Sans";
@@ -1134,6 +1148,15 @@ a.back_to_top {
   }
 }
 
+@media screen and (min-width: 1600px) {	
+  .nav .nav_container {
+    max-width:800px
+  }
+
+  .content .post_page,.content .wrapper,.content .list_with_title,.content .page_tags {
+      max-width: 800px
+  }
+}
 /*animation starts*/
 @-webkit-keyframes fadeInDown {
   0% {

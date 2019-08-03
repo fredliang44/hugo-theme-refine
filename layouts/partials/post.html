@@ -1,7 +1,9 @@
 {{ $pages := where .Pages "Params.hidden" "ne" true }}
 {{ $paginator := .Paginate (where $pages "Type" "posts") }}
 {{ range $paginator.Pages }}
+
 <div class="post animated fadeInDown">
+  <a class="post_url" href="{{ .RelPermalink }}"></a>
   <div class="post_title">
     <h2><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
   </div>
@@ -52,6 +54,7 @@
     </div>
   </div>
 </div>
+
 {{ end }}
 
 

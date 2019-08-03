@@ -67,13 +67,13 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
   /\.(?:png|jpg|jpeg|svg|gif)$/,
   new workbox.strategies.CacheFirst({
-    cacheName: 'my-image-cache',
+    cacheName: 'image-cache',
   })
 );
 
 workbox.routing.registerRoute(
   new RegExp('https://storage\\.fredliang\\.cn/'),
-  new workbox.strategies.staleWhileRevalidate({
+  workbox.strategies.staleWhileRevalidate({
     cacheName: 'workbox:storage',
   })
 );
