@@ -8,21 +8,22 @@ workbox.setConfig({
 const CACHE_PREFIX = 'blog';
 
 const PRECACHE_LIST = [
-    '/',
-    '/offline/',
-    '{{ .Scratch.Get "jsHref"}}'
+  '/',
+  '/offline/',
+  '{{ .Scratch.Get "jsHref"}}'
 ];
 
 const HOSTNAME_WHITELIST = [
   self.location.hostname,
   'storage.fredliang.cn',
+  '*.lzb.im',
 ];
 
 workbox.setConfig({
   modulePathPrefix: 'https://g.alicdn.com/kg/workbox/3.6.3/'
 });
 
-workbox.core.setCacheNameDetails({prefix: CACHE_PREFIX});
+workbox.core.setCacheNameDetails({ prefix: CACHE_PREFIX });
 
 workbox.skipWaiting();
 workbox.clientsClaim();
@@ -35,18 +36,18 @@ workbox.precaching.suppressWarnings();
  */
 
 var networkFirstHandler = workbox.strategies.networkFirst({
-    cacheName: 'default',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 10
-      }),
-      new workbox.cacheableResponse.Plugin({
-        statuses: [200]
-      })
-    ]
-  });
+  cacheName: 'default',
+  plugins: [
+    new workbox.expiration.Plugin({
+      maxEntries: 10
+    }),
+    new workbox.cacheableResponse.Plugin({
+      statuses: [200]
+    })
+  ]
+});
 
-const matcher = ({event}) => event.request.mode === 'navigate';
+const matcher = ({ event }) => event.request.mode === 'navigate';
 const handler = (args) => networkFirstHandler.handle(args).then((response) => (!response) ? caches.match('/offline/') : response);
 
 // active offline page
@@ -83,11 +84,11 @@ workbox.routing.registerRoute(
   workbox.strategies.staleWhileRevalidate()
 );
 
-self.addEventListener('install', function(event){
+self.addEventListener('install', function (event) {
   console.log('installed!');
 });
 
-self.addEventListener('activate', function(event){
+self.addEventListener('activate', function (event) {
   console.log('activated!');
 });
 

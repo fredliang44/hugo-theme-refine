@@ -134,6 +134,7 @@ button {
 /*basic styles ends*/
 
 .main {
+  min-height: 80%;
   background: #FAFAFA;
   margin: 0;
 }
@@ -789,7 +790,7 @@ button {
   ul,
   ol,
   dl {
-    margin: 0.8em 0;
+    margin: -0.8em 0;
   }
 
   h1,
@@ -818,7 +819,7 @@ button {
   }
 
   h1 {
-    margin: 2.5em 0 1.5em 0;
+    margin: 1.5em 0 1.5em 0;
     font-size: 1.6em;
   }
 
