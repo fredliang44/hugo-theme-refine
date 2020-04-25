@@ -1,44 +1,44 @@
 <script>
-  if('serviceWorker' in navigator) {
-    navigator.serviceWorker
-      .register('/sw.js', { scope: '/' })
-      .then(reg => {
-        reg.addEventListener('updatefound', () => {
-          // An updated service worker has appeared in reg.installing!
-          newWorker = reg.installing;
-          newWorker.addEventListener('statechange', () => {
-            // Has service worker state changed?
-            if (newWorker.state === 'installed') {
-              if (navigator.serviceWorker.controller) {
-                console.log('Service Worker Updated');
-                showNotify( "网站有更新，点击<a href='"+window.location.href+"'>刷新当前页面</a>获取最新版");
-                return 0
-              }
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js", { scope: "/" }).then((reg) => {
+      reg.addEventListener("updatefound", () => {
+        // An updated service worker has appeared in reg.installing!
+        newWorker = reg.installing;
+        newWorker.addEventListener("statechange", () => {
+          // Has service worker state changed?
+          if (newWorker.state === "installed") {
+            if (navigator.serviceWorker.controller) {
+              console.log("Service Worker Updated");
+              showNotify(
+                "网站有更新，点击<a href='" +
+                  window.location.href +
+                  "'>刷新当前页面</a>获取最新版"
+              );
+              return 0;
             }
-          });
+          }
         });
       });
+    });
 
-    navigator.serviceWorker
-      .ready
-      .then(function(registration) {
-        console.log('Service Worker Ready');
-      });
+    navigator.serviceWorker.ready.then(function (registration) {
+      console.log("Service Worker Ready");
+    });
   }
 
   function showNotify(content) {
-      let notify =  document.getElementById('notify');
-      let body =  document.getElementById('notify_content');
+    let notify = document.getElementById("notify");
+    let body = document.getElementById("notify_content");
 
-      notify.setAttribute('style','display:block; bottom: 20px');
-      setTimeout(hideNotify, 10000);
-      body.innerHTML = content;
+    notify.setAttribute("style", "display:block; bottom: 20px");
+    setTimeout(hideNotify, 10000);
+    body.innerHTML = content;
   }
 
   function hideNotify() {
-      let notify =  document.getElementById('notify');
-      notify.setAttribute('style','bottom: -100px');
+    let notify = document.getElementById("notify");
+    notify.setAttribute("style", "bottom: -100px");
 
-      setTimeout(notify.setAttribute('style','display:none'), 2000);
+    setTimeout(notify.setAttribute("style", "display:none"), 2000);
   }
 </script>

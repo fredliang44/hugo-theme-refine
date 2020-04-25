@@ -7,14 +7,6 @@
 {{ $sw := resources.Get "sw.js" | resources.ExecuteAsTemplate "sw.js" . }}
 {{ $test := $sw.Permalink}}
 
-<script src="{{ "js/highlight.pack.js" | absURL }}" async></script>
-<link  href="{{ "css/prism.css" | absURL }}" rel="stylesheet">
-<script src="{{ "js/prism.js" | absURL }}" async></script>
-
-{{ if .Site.Params.enableMathJax }}
-  {{ partial "mathjax.html" . }}
-{{ end }}
-
 {{ if .Site.Params.fathom.enable }}
   {{ partial "fathom.html" . }}
 {{ end }}

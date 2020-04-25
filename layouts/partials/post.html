@@ -3,7 +3,6 @@
 {{ range $paginator.Pages }}
 
 <div class="post animated fadeInDown">
-  <a class="post_url" href="{{ .RelPermalink }}"></a>
   <div class="post_title">
     <h2><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
   </div>
@@ -63,7 +62,7 @@
   {{ if $paginator.HasPrev }}
   <a href="{{$paginator.Prev.URL}}">
     <div class="pagination_button pre">
-      <i class="remixicon-arrow-left-circle-line"></i>&nbsp{{ i18n "prev_page" }} 
+      <i class="remixicon-arrow-left-circle-line"></i>&nbsp{{ i18n "prev_page" }}
     </div>
   </a>
   {{ end }}
