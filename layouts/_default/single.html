@@ -45,7 +45,7 @@
           {{ partial "comments.html" . }}
         {{ end }}
       </div>
-      
+
     </div>
 
   <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
@@ -53,7 +53,9 @@
 {{ partial "footer.html" . }}
 {{ partial "js.html" . }}
 
-<script src="{{ "js/plyr.polyfilled.js" | absURL }}"></script>
+{{ if .HasShortcode "video" }}
+<script src="{{ "js/plyr.polyfilled.min.js" | absURL }}"></script>
+{{ end }}
 <script src="{{ "js/remember-scroll.min.js" | absURL }}"></script>
 <script>
 // remember previous reading location

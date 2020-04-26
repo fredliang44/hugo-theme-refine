@@ -1,0 +1,11 @@
+<video
+    {{ with .Get "poster" }} poster="{{ . }}" {{ end }}
+    disableContextMenu="true"
+    controls="controls"
+    preload="metadata"
+    width="100%" >
+    <source
+        {{ with .Get "src" }} src="{{ . }}" {{ end }}
+        type="video/mp4"
+    />
+</video>

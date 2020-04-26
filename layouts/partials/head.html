@@ -40,7 +40,7 @@
 
     <link rel="apple-touch-icon" href="/images/icon/apple-touch-icon.png">
     <link rel="preconnect" href="https://g.alicdn.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
     <link rel="preconnect" href="https://www.googletagmanager.com">
 
     <!-- Permalink & RSSlink -->
@@ -59,14 +59,17 @@
     </title>
 
     <link rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}" />
-    <link rel="stylesheet" href="{{ "css/animate.min.css" | absURL }}" />
 
-    <!-- refine.css then set link in sw.js-->
+    <!-- animate.css -->
+    {{ $animateStyle := resources.Get "css/animate.css" | resources.Minify }}
+    <link rel="stylesheet" href="{{ $animateStyle.Permalink }}" />
+
+    <!-- refine.css -->
     {{ with resources.Get "css/refine.scss" | toCSS | minify }}
     <style> {{ .Content|safeCSS }} </style>
     {{ end }}
 
-    <!-- refine.css then set link in sw.js-->
+    <!-- remixicon.css -->
     {{ $style := resources.Get "css/remixicon.css" | resources.Minify }}
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
 
@@ -83,6 +86,9 @@
     {{ end }}
 
     <link rel="manifest" href="/manifest.json" />
+
+    {{ if .HasShortcode "video" }}
     <link async rel="stylesheet" href="{{ "css/plyr.css" | absURL }}" />
+    {{ end }}
   </head>
 </html>
