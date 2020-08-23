@@ -90,5 +90,7 @@
     {{ if .HasShortcode "video" }}
     <link async rel="stylesheet" href="{{ "css/plyr.css" | absURL }}" />
     {{ end }}
+
+    {{ partial "ranger.html" . }}
   </head>
 </html>
