@@ -12,7 +12,7 @@ visit <https://www.yuque.com/fredliang/refine> for blog design file
 
 ## Lighthouse test result
 
-![](https://storage.fredliang.cn/web/Xnip2020-04-26_06-09-54.png)
+![](https://storage.fredliang.cn/web/blog-lighthouse-score.gif)
 
 ## Todo
 
