@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Product Sans";
-  font-display: auto;
+  font-display: swap;
   src: url("/fonts/ProductSans-Light.eot");
   src: local("Product Sans"), local("ProductSans-Light"),
     url("/fonts/ProductSans-Light.eot?#iefix") format("embedded-opentype"),
@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: "Product Sans";
-  font-display: auto;
+  font-display: swap;
   src: url("/fonts/ProductSans-Thin.woff2");
   src: local("Product Sans"), local("ProductSans-Thin"),
     url("/fonts/ProductSans-Thin.eot?#iefix") format("embedded-opentype"),
@@ -28,7 +28,7 @@
 
 @font-face {
   font-family: "Product Sans";
-  font-display: auto;
+  font-display: swap;
   src: url("/fonts/ProductSans-Regular.woff2");
   src: local("Product Sans"), local("ProductSans-Regular"),
     url("/fonts/ProductSans-Regular.eot?#iefix") format("embedded-opentype"),
@@ -42,7 +42,7 @@
 
 @font-face {
   font-family: "Product Sans";
-  font-display: auto;
+  font-display: swap;
   src: url("/fonts/ProductSans-Bold.woff2");
   src: local("Product Sans Bold"), local("ProductSans-Bold"),
     local("Product Sans"),
@@ -71,8 +71,8 @@ html {
 
 body {
   color: #333333;
-  font-family: "PingFang SC", "Helvetica Neue", "SF Pro SC", "SF Pro Display",
-    "SF Pro Icons", "Helvetica", "Arial", sans-serif;
+  font-family: "Product Sans", "PingFang SC", "Helvetica Neue", "SF Pro SC",
+    "SF Pro Display", "SF Pro Icons", "Helvetica", "Arial", sans-serif;
   font-size: 16px;
   width: 100%;
   background-color: #fafafa;
@@ -139,7 +139,7 @@ button {
 /*basic styles ends*/
 
 .main {
-  min-height: 80%;
+  min-height: 82vh;
   background: #fafafa;
   margin: 0;
 }
@@ -151,6 +151,11 @@ button {
   display: flex;
   justify-content: center;
 
+  twitter-widget {
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+  }
   .post_page,
   .wrapper,
   .list_with_title,
@@ -310,7 +315,8 @@ button {
 
     .site_nav {
       float: left;
-      font-family: "Product Sans","Google Sans",Roboto,Arial,Helvetica,sans-serif;
+      font-family: "Product Sans", "Google Sans", Roboto, Arial, Helvetica,
+        sans-serif;
 
       .nav_active {
         font-weight: bold;
@@ -410,7 +416,8 @@ button {
     .meta {
       max-width: 100%;
       height: 30px;
-      font-family: "Product Sans","Google Sans",Roboto,Arial,Helvetica,sans-serif;
+      font-family: "Product Sans", "Google Sans", Roboto, Arial, Helvetica,
+        sans-serif;
       font-size: 10px;
       color: rgba(0, 0, 0, 0.6);
       letter-spacing: 0;
@@ -442,6 +449,10 @@ button {
   .post_detail_title h2 {
     font-size: 1.5rem;
     font-weight: bold;
+  }
+
+  .post_detail_title {
+    padding-bottom: 0;
   }
 
   .list {
@@ -493,7 +504,8 @@ button {
     justify-content: space-between;
 
     span {
-      font-family: "Product Sans","Google Sans",Roboto,Arial,Helvetica,sans-serif;
+      font-family: "Product Sans", "Google Sans", Roboto, Arial, Helvetica,
+        sans-serif;
       font-size: 20px;
       margin-right: 4px;
       letter-spacing: 0;
@@ -550,7 +562,8 @@ button {
 }
 
 .field {
-  font-family: "Product Sans","Google Sans",Roboto,Arial,Helvetica,sans-serif;
+  font-family: "Product Sans", "Google Sans", Roboto, Arial, Helvetica,
+    sans-serif;
   a {
     text-decoration: none;
     &:hover {
@@ -617,12 +630,18 @@ button {
 .footer {
   clear: both;
   text-align: center;
-  padding: 40px 0;
+  min-height: 18vh;
   background: #ffffff;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
 
+  > .footer_info {
+    width: 100%;
+  }
   p {
-    font-family: "Product Sans","Google Sans",Roboto,Arial,Helvetica,sans-serif;
+    font-family: "Product Sans", "Google Sans", Roboto, Arial, Helvetica,
+      sans-serif;
     font-size: 18px;
     color: rgba(0, 0, 0, 0.54);
     letter-spacing: 0;
@@ -630,7 +649,8 @@ button {
 
     a {
       transition-duration: 0.2s;
-      font-family: "Product Sans","Google Sans",Roboto,Arial,Helvetica,sans-serif;
+      font-family: "Product Sans", "Google Sans", Roboto, Arial, Helvetica,
+        sans-serif;
       font-weight: bold;
       color: rgba(0, 0, 0, 0.54);
 
@@ -644,13 +664,17 @@ button {
     a i {
       transition-duration: 0.5s;
       color: rgba(0, 0, 0, 0.5);
-      font-size: 18px;
+      font-size: 15px;
       margin: 0 2px;
 
       &:hover {
         color: rgba(0, 0, 0, 1);
       }
     }
+  }
+  .powered_by {
+    margin-top: -7px;
+    font-size: 16px;
   }
 
   .beian {
@@ -683,7 +707,8 @@ button {
   .listing_title {
     font-size: 2.6rem;
     color: #6d6d6d;
-    font-family: "Product Sans","Google Sans",Roboto,Arial,Helvetica,sans-serif;
+    font-family: "Product Sans", "Google Sans", Roboto, Arial, Helvetica,
+      sans-serif;
     font-weight: bold;
     padding-top: 10px;
     line-height: 2.2em;
@@ -731,7 +756,8 @@ button {
           float: right;
           color: #757575;
           font-size: 14px;
-          font-family: "Product Sans","Google Sans",Roboto,Arial,Helvetica,sans-serif;
+          font-family: "Product Sans", "Google Sans", Roboto, Arial, Helvetica,
+            sans-serif;
         }
 
         a:hover {
@@ -785,7 +811,8 @@ button {
   word-wrap: break-word;
   word-break: normal;
   overflow-wrap: break-word;
-
+  font-family: "PingFang SC", "Helvetica Neue", "SF Pro SC", "SF Pro Display",
+    "SF Pro Icons", "Helvetica", "Arial", sans-serif;
   ul,
   ol,
   dl {

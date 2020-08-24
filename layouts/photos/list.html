@@ -1,0 +1,95 @@
+{{ partial "head.html" . }}
+<body>
+{{ partial "bodystart.html" . }}
+<div class="main animated">
+  {{ partial "nav.html" . }}
+  {{ partial "header.html" . }}
+  <div class="content">
+    <div class="list_by_year animated fadeInDown">
+      {{ range .Data.Pages.GroupByDate "2006" }}
+      <div class="photo_item_by_year">
+        <div class="photo_title_of_year"> {{ .Key }} </div>
+        {{ range .Pages }}
+          {{ if not .Params.hidden }}
+            {{ $params := .Params }}
+            {{ range .Params.imgSrc }}
+  
+            <figure class="photo_list"> 
+              {{ $transformParam := "?x-oss-process=style/mark"}}
+              {{ if $params.hasWatermark }}
+                {{ $transformParam = "?x-oss-process=style/"}}
+              {{ end }}
+
+              {{ $exifInfo := getJSON (print . "?x-oss-process=image/info") }}
+              <div class="img_container">
+                <div class="img_inner">
+                  {{ $averageHue := substr (getJSON (print . "?x-oss-process=image/average-hue")).RGB 2 8}}
+                  <div 
+                    class="img_border" 
+                    style='background-color:#{{ $averageHue }};padding-bottom: calc(100% * ({{ $exifInfo.ImageHeight.value }}) / {{ $exifInfo.ImageWidth.value }});height:0;'
+                  >
+
+                    <div class="placeholder">
+                      <img class="small" width="{{ $exifInfo.ImageWidth.value }}" height="{{ $exifInfo.ImageHeight.value }}" loading="lazy" src='{{print . $transformParam "200" }}' alt="{{ $params.title }}"> 
+                      <img class="middle" width="{{ $exifInfo.ImageWidth.value }}" height="{{ $exifInfo.ImageHeight.value }}" loading="lazy" src='{{print . $transformParam "600" }}' alt="{{ $params.title }}"> 
+                      <img class="large" width="{{ $exifInfo.ImageWidth.value }}" height="{{ $exifInfo.ImageHeight.value }}" loading="lazy" src='{{print . $transformParam "1920" }}' loading="lazy" alt="{{ $params.title }}"> 
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              
+              <figcaption>
+                <ul class="photo_details">
+                  <li class="param">
+                    
+                   
+                    <span>
+                      Properties
+                    </span>
+                    <ul>
+                      <li>
+                        <i class="icon">&#xe905;</i>
+                        <span> {{ $exifInfo.FocalLength.value }}</span> 
+                      </li>
+                      <li>
+                        <i class="icon">&#xe664;</i>
+                        <span> {{ $exifInfo.ExposureTime.value }}</span> 
+                      </li>
+                      <li>
+                        <i class="icon">&#xe70f;</i>
+                        <span> {{ $exifInfo.ISOSpeedRatings.value }}</span> 
+                      </li>
+                      
+                    </ul>
+                  </li>
+                  <li class="location"> 
+                    <span>Location</span>
+                    <a>{{ $params.location }}</a>
+                  </li>
+                  <li class="date">
+                    <span>Date</span>
+                    {{ $date := replace (index (split $exifInfo.DateTimeOriginal.value " ") 0) ":" "-"}}
+                    {{ dateFormat "Monday, Jan 2, 2006" (replace $date ":" "-")  }}
+                    <time></time>
+                  </li>
+                  <li class="device"> 
+                    <span>Device</span>
+                    <a> {{ $exifInfo.Model.value }}</a>
+                  </li>
+                </ul>
+              </figcaption> 
+            </figure>
+            {{ end}}
+          {{ end}}
+        {{ end}}
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+{{ partial "footer.html" . }}
+{{ partial "js.html" . }}
+</body>
+</html>

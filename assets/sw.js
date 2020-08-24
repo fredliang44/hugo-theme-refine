@@ -1,7 +1,7 @@
-importScripts("https://g.alicdn.com/kg/workbox/3.6.3/workbox-sw.js");
+importScripts("https://blog.fredliang.cn/js/workbox/3.6.3/workbox-sw.js");
 
 workbox.setConfig({
-  modulePathPrefix: "https://g.alicdn.com/kg/workbox/3.6.3/",
+  modulePathPrefix: "https://blog.fredliang.cn/js/workbox/3.6.3/",
   debug: false,
 });
 
@@ -16,7 +16,7 @@ const HOSTNAME_WHITELIST = [
 ];
 
 workbox.setConfig({
-  modulePathPrefix: "https://g.alicdn.com/kg/workbox/3.6.3/",
+  modulePathPrefix: "https://blog.fredliang.cn/js/workbox/3.6.3/",
 });
 
 workbox.core.setCacheNameDetails({ prefix: CACHE_PREFIX });
@@ -54,7 +54,7 @@ workbox.routing.registerRoute(matcher, handler);
 
 workbox.routing.registerRoute(
   new RegExp(".*.(?:html|json)"),
-  workbox.strategies.networkFirst()
+  workbox.strategies.staleWhileRevalidate()
 );
 
 workbox.routing.registerRoute(
@@ -81,7 +81,9 @@ workbox.routing.registerRoute(
 **/
 
 workbox.routing.registerRoute(
-  new RegExp("https://storage\\.fredliang\\.cn/.*?(?<!mp4)$"),
+  new RegExp(
+    "https://storage\\.fredliang\\.cn/.*?(?<!mp4|mov|mp4|avi|rmvb|wmv|mkv|flv)$"
+  ),
   workbox.strategies.staleWhileRevalidate()
 );
 

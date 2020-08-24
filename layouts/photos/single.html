@@ -1,0 +1,33 @@
+{{ partial "head.html" . }}
+<body>
+{{ partial "bodystart.html" . }}
+<div class="main animated">
+  {{ partial "nav.html" . }}
+  {{ partial "header.html" . }}
+  <div class="content">
+    <aside class="left"></aside>
+    <div class="list_with_title">
+      {{ range .Data.Pages.GroupByDate "2006" }}
+      <div class="listing_title">{{ .Key }}</div>
+      <div class="listing">
+        {{ range .Pages }}
+           {{ if not .Params.hidden }}
+            <div class="listing_item">
+              <div class="listing_post">
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <div class="post_time"><span class="date">{{ .Date.Format "01-02" }}</span></div>
+              </div>
+            </div>
+          {{ end }}
+        {{ end }}
+      </div>
+      {{ end }}
+    </div>
+    <aside class="right"></aside>
+  </div>
+  <a id="back_to_top" href="#" class="back_to_top"><span>△</span></a>
+</div>
+{{ partial "footer.html" . }}
+{{ partial "js.html" . }}
+</body>
+</html>

@@ -19,3 +19,12 @@
 {{ if not .Site.IsServer }}
   {{ partial "service-worker.html" . }}
 {{ end }}
+
+
+{{ if eq .Section "photos" }} 
+{{ with resources.Get "js/photo.js" | minify }}
+<script>
+   {{ .Content | safeJS }}
+</script>
+{{ end }} 
+{{ end }}

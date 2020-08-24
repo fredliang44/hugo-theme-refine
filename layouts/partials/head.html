@@ -38,10 +38,14 @@
     />
     {{ end }}
 
-    <link rel="apple-touch-icon" href="/images/icon/apple-touch-icon.png">
-    <link rel="preconnect" href="https://g.alicdn.com">
-    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
-    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="apple-touch-icon" href="/images/icon/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://g.alicdn.com" />
+    <link
+      rel="preconnect"
+      href="https://www.google-analytics.com"
+      crossorigin
+    />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
 
     <!-- Permalink & RSSlink -->
     <link rel="canonical" href="{{ .Permalink }}" />
@@ -61,23 +65,43 @@
     <link rel="shortcut icon" href="{{ "images/favicon.ico" | absURL }}" />
 
     <!-- animate.css -->
-    {{ $animateStyle := resources.Get "css/animate.css" | resources.Minify }}
-    <link rel="stylesheet" href="{{ $animateStyle.Permalink }}" />
+    {{ with resources.Get "css/animate.css" | minify }}
+    <style>
+      {{ .Content|safeCSS }}
+    </style>
+    {{ end }}
+
+    {{ if eq .Section "photos" }} {{ with resources.Get "css/photo.scss" | toCSS | minify }}
+    <style>
+       {{ .Content|safeCSS }}
+    </style>
+    {{ end }} {{ end }}
 
     <!-- refine.css -->
     {{ with resources.Get "css/refine.scss" | toCSS | minify }}
-    <style> {{ .Content|safeCSS }} </style>
+    <style>
+       {{ .Content|safeCSS }}
+    </style>
     {{ end }}
 
     <!-- remixicon.css -->
-    {{ $style := resources.Get "css/remixicon.css" | resources.Minify }}
-    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+    {{ with  resources.Get "css/remixicon.css" | minify }}
+    <style>
+      {{ .Content|safeCSS }}
+    </style>
+    {{ end }}
 
-    <link rel="stylesheet" href="{{ "css/highlight.css" | absURL }}" />
+    <!-- highlight.css -->
+    {{ if eq .Section "posts" }} 
+      {{ with  resources.Get "css/highlight.css" | minify }}
+      <style>
+        {{ .Content|safeCSS }}
+      </style>
+      {{ end }}
+    {{ end }}
 
     <!-- custom css -->
-    {{ range .Site.Params.customCSS }}
-    <link rel="stylesheet" href="{{ "css/" | absURL }}{{ . }}"> {{ end }} {{ if .Site.Params.fathom.enable }}
+    {{ range .Site.Params.customCSS }} <link rel="stylesheet" href="{{ "css/" | absURL }}{{ . }}"> {{ end }} {{ if .Site.Params.fathom.enable }}
     <link
       rel="preload"
       as="script"
@@ -87,8 +111,6 @@
 
     <link rel="manifest" href="/manifest.json" />
 
-    {{ if .HasShortcode "video" }}
-    <link async rel="stylesheet" href="{{ "css/plyr.css" | absURL }}" />
-    {{ end }}
+    {{ if .HasShortcode "video" }} <link async rel="stylesheet" href="{{ "css/plyr.css" | absURL }}" /> {{ end }}
   </head>
 </html>

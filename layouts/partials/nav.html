@@ -6,12 +6,12 @@
         </a>
     </div>
   </div>
-  <div class="nav_container animated fadeInDown">
+  <div class="nav_container">
     <div class="site_nav" id="site_nav">
       <ul>
         {{ $currentPage := . }}
         {{ range.Site.Menus.main }}
-        <li class="{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}nav_active{{ end }}">
+        <li class="{{ if or ($currentPage.IsMenuCurrent "main animated" .) ($currentPage.HasMenuCurrent "main animated" .) }}nav_active{{ end }}">
           <a href="{{ .URL | safeURL }}">{{ .Name }}</a>
         </li>
         {{ end }}

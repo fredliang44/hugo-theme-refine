@@ -1,27 +1,32 @@
 <footer class="footer">
-  <p class="powered_by">
-    <a href="https://www.yuque.com/fredliang/refine">Designed</a> & <a href="https://github.com/fredliang44/hugo-theme-refine">Coded</a> With ❤️ by <a href="https://www.fredliang.cn">Fred Liang</a>
-  </p>
+  <div class="footer_info">
+    <p class="author">
+      <a href="https://www.yuque.com/fredliang/refine">Designed</a> & <a href="https://github.com/fredliang44/hugo-theme-refine">Coded</a> With ❤️ by <a href="https://www.fredliang.cn">Fred Liang</a>
+    </p>
 
-  <div class="my_socials">
-    {{ range $key, $val := .Site.Social }}
-    {{ if ne $val "" }}
-    <a rel="noreferrer noopener" href="{{ $val }}" title="{{ $key }}" target="_blank"><i class="remixicon-{{ $key }}-fill"></i></a>
-    {{ end }}
-    {{ end }}
+    <p class="powered_by">
+      Powered By
+      <a rel="noreferrer noopener" href="{{ .Site.Params.powerBy.url }}" title="powerby" target="_blank"> {{ .Site.Params.powerBy.service }} </a>
+    </p>
+    
+    <div class="my_socials">
+      {{ range $key, $val := .Site.Social }}
+      {{ if ne $val "" }}
+      <a rel="noreferrer noopener" href="{{ $val }}" title="{{ $key }}" target="_blank"><i class="remixicon-{{ $key }}-fill"></i></a>
+      {{ end }}
+      {{ end }}
 
-    <a href="{{ .Site.RSSLink }}" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a> 
+      <a href="{{ .Site.RSSLink }}" type="application/rss+xml" title="rss" target="_blank"><i class="remixicon-rss-fill"></i></a> 
+    </div>
 
-  </div>
+    <p class="beian">
+      <a rel="noreferrer noopener" href="http://www.beian.miit.gov.cn" title="beian" target="_blank"> {{ .Site.Params.beian.text }} </a>
+    </p>
 
-  <p class="beian">
-    <a rel="noreferrer noopener" href="http://www.beian.miit.gov.cn" title="beian" target="_blank"> {{ .Site.Params.beian.text }} </a>
-  </p>
-
-
-  <div id="notify">
-    <div class="notify_wrapper">
-      <p id="notify_content"></p>
+    <div id="notify">
+      <div class="notify_wrapper">
+        <p id="notify_content"></p>
+      </div>
     </div>
   </div>
 </footer>

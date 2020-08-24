@@ -7,4 +7,5 @@ tags: []
 keywords: []
 description: ""
 slug: ""
+isCJKLanguage: true
 ---
