@@ -1,0 +1,35 @@
+<script>
+  (function (win, export_obj) {
+    win["TeaAnalyticsObject"] = export_obj;
+    if (!win[export_obj]) {
+      function _collect() {
+        _collect.q.push(arguments);
+      }
+      _collect.q = _collect.q || [];
+      win[export_obj] = _collect;
+    }
+    win[export_obj].l = +new Date();
+  })(window, "collectEvent");
+</script>
+<script
+  async
+  src="https://s0.ipstatp.com/static_magic/pgc/tech/collect/collect-autotrack-rangers.js"
+></script>
+<script>
+window.collectEvent("init", {
+app_id: 187690,
+channel: "sg",
+enable_ab_test: true,
+autotrack: true,
+});
+window.collectEvent('getVar', 'show', '', function(value) { 
+  if (value) {
+    document.getElementById("ab").innerHTML=`<p>${value} Group</p>`;
+  } else {
+    document.getElementById("ab").innerHTML="<p>Missing</p>";
+  }
+})
+window.collectEvent("start");
+</script>
+
+
