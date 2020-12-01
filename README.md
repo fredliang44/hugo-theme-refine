@@ -21,3 +21,5 @@ visit <https://www.yuque.com/fredliang/refine> for blog design file
 - [x] Supoort social share url
 - [ ] Example site
 - [ ] Support i18n
+- [ ] Dark mode support
+- [ ] Search suuport
